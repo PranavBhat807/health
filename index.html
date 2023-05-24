@@ -23,7 +23,7 @@
 
       background-color: rgba(135, 206, 250, 1);
     }
-
+    
     .logo {
             position: relative;
             z-index: 1;
@@ -69,6 +69,17 @@
       left: 0;
       right: 0;
     }
+    @media (max-width: 500px) {
+      .navbar {
+          align-items: flex-start;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+      .navbar-collapse {
+          background-color: #fff;
+          padding: 10px;
+    }
+  }
 
     .navbar .search-button {
       margin-left: auto;
@@ -83,18 +94,17 @@
       font-size: 30px;
       font-style: oblique;
       font-weight: bolder;
+      
     }
 
     /* Footer Styles */
 
     .footer {
-      background-color: #299cca;
+      background-color: #3586ff;
       padding: 4px 0;
       bottom: 0;
       width: 100%;
       position: relative;
-      border-top-left-radius: 120px;
-      border-top-right-radius: 120px;
     }
 
     .footer .container {
@@ -207,8 +217,58 @@
   100% {
     transform: scale(0.9);
   }
+  
 }
+footer .wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(wave.png);
+  background-size: 1000px 100px;
 
+}
+footer .wave#wave1{
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0px;
+  animation: animatewave 4s linear infinite;
+}
+footer .wave#wave2{
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animatewave02 4s linear infinite;
+}
+footer .wave#wave3{
+  z-index: 999;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animatewave02 3s linear infinite;
+}
+footer .wave#wave4{
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animatewave02 3s linear infinite;
+}
+@keyframes animatewave {
+  0%{
+    background-position-x: 1000px;
+  }
+  100%{
+    background-position-x: 0px;
+  }
+}
+@keyframes animatewave02 {
+  0%{
+    background-position-x: 0px;
+  }
+  100%{
+    background-position-x: 1000px;
+  }
+}
   </style>
 </head>
 
@@ -263,6 +323,13 @@
 
   <!-- Footer -->
   <footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+
+    </div>
     <div class="container">
       <div class="column">
         <h3><b>Column 1</b></h3>
